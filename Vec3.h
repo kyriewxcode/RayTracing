@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __Vec3_H__
 #define __Vec3_H__
 #include <math.h>
