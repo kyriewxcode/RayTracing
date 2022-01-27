@@ -1,20 +1,22 @@
 #pragma once
 #ifndef __HITABLE_H__
 #define __HITABLE_H__
-#include "Ray.h"
+#include "ray.h"
 
-struct hit_record
+class Material;
+
+struct HIT_RECORD
 {
-	float t;
-	Vec3 p;
+	float time{};
+	Vec3 point;
 	Vec3 normal;
+	Material* mat_ptr;
 };
 
-class hitable
+class Hitable
 {
 public:
-	hitable() {};
-	virtual bool hit(const Ray& r, float t_min, float t_max, hit_record& rec) const = 0;
+	virtual bool hit(const Ray& r, float t_min, float t_max, HIT_RECORD& rec) const = 0;
 
 };
 
